@@ -13,6 +13,19 @@ const projectShowView = {
 
   initializeListeners() {
     this.$viewTasksButton.click(e => this.handleViewTasksClick(e))
+    this.$el.delegate('.delete-task', 'click', e => this.handleDeleteTask(e))
+  },
+
+  handleDeleteTask(e) {
+    var $taskButton = $(e.target)
+    var taskId = $taskButton.data('task-id')
+
+    $taskButton.closest('.task').remove()
+    $.ajax({
+      url: `${this.tasksUrl}/${taskId}`,
+      type: 'DELETE',
+      data: { id: taskId }
+    })
   },
 
   handleViewTasksClick(e) {
@@ -26,7 +39,12 @@ const projectShowView = {
   },
 
   buildTaskNode(task) {
-    return $('<li>').text(task.name);
+    var $name = $('<span>').text(task.name)
+    var $deleteButton = $('<button class="btn btn-danger delete-task">').text('Delete')
+      .data('task-id', task.id)
+
+    return $('<li class="task">').append($name)
+      .append($deleteButton)
   }
 
 };
