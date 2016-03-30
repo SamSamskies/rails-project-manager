@@ -1,6 +1,8 @@
 ProjectManager::Application.routes.draw do
   devise_for :users
-  resources :projects
+  resources :projects do
+    resources :tasks
+  end
   root to: 'pages#home'
 
 
@@ -44,7 +46,7 @@ ProjectManager::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
