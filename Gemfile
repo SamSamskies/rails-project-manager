@@ -22,6 +22,8 @@ gem 'kaminari'
 gem 'twitter-bootstrap-rails'
 gem 'quiet_assets'
 gem 'thin'
+gem 'browserify-rails'
+gem 'js-routes'
 
 group :development do
   gem 'byebug'

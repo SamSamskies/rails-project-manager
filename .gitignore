@@ -19,3 +19,5 @@
 .console_history
 
 .byebug_history
+node_modules
+.babelrc
