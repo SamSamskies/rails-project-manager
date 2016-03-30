@@ -1,10 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div id="project-show-container" data-project-id="<%= @project.id %>">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
-<button class='btn'>View Tasks</button>
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
-
+  <p>
+    <strong>Name:</strong>
+    <%= @project.name %>
+  </p>
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %>
+  <br>
+  <br>
+  <button id="view-tasks-button" class="btn">View Tasks</button>
+  <ul id="tasks-container"></ul>
+</div>
