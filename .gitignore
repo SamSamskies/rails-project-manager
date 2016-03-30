@@ -17,3 +17,5 @@
 
 /app/config/database.yml
 .console_history
+
+.byebug_history
