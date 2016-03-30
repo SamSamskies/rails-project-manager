@@ -55,8 +55,9 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1.json
   def destroy
     @project.destroy
+    notice = @project.errors.full_messages.join(', ')
     respond_to do |format|
-      format.html { redirect_to projects_url }
+      format.html { redirect_to projects_url, notice: notice }
       format.json { head :no_content }
     end
   end
