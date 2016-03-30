@@ -1,4 +1,4 @@
-const projectShowView = {
+export const projectShowView = {
 
   initialize() {
     this.$el = $('#project-show-container')
@@ -48,9 +48,4 @@ const projectShowView = {
   }
 
 };
-
-projectShowView.initialize()
-
-export default projectShowView
-
 

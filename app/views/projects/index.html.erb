@@ -17,7 +17,7 @@
         <td>
           <%= link_to 'Show', project, class: 'btn' %>
 
-          <% if project.users.include? current_user %>
+          <% if project.users.include? current_user || @current_user_is_admin %>
             <%= link_to 'Edit', edit_project_path(project), class: 'btn' %>
             <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
           <% end %>
