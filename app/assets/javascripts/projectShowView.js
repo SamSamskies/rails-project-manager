@@ -35,6 +35,7 @@ export const projectShowView = {
   },
 
   renderTasks(tasks) {
+    this.$tasksContainer.empty()
     tasks.forEach(t => this.$tasksContainer.append(this.buildTaskNode(t)))
   },
 
