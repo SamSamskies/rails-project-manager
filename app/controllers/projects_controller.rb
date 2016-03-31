@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.includes(:users).page(params[:page]).per(10)
-    # @current_user_is_admin = current_user.role == User::ROLE[:admin]
+    @current_user_is_admin = current_user.try(:role) == User::ROLE[:admin]
   end
 
   # GET /projects/1
