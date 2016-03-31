@@ -1,7 +1,10 @@
 import { projectShowView } from './projectShowView'
 import { updateNavbarColor } from './updateNavbarColor'
 
-projectShowView.initialize()
+const hasProjectIdInPath = /\/projects\/\d+/.test(location.pathname)
 
-// TODO: Finish navbar color stretch
+if (hasProjectIdInPath) {
+  projectShowView.initialize()
+}
+
 updateNavbarColor()
